@@ -1,3 +1,3 @@
 # kivy
 Simple kivy app example 
-a calculator that perfors basic operations
+a calculator that performs basic mathematical operations
