@@ -1,0 +1,200 @@
+<CustomSpinnerOption@SpinnerOption>:
+	size_hint_y:None
+	height:'40dp'
+	color:0,1,1,.2
+
+
+
+
+
+<home>:
+	
+	BoxLayout:
+		size:root.width,root.height
+		orientation:'vertical'
+		canvas.before:
+			Color:
+				rgba:1,1,1,.1
+			Rectangle:
+				size:self.size
+				pos:self.pos
+
+	
+##################################
+		GridLayout:
+			size_hint_y:None
+			height:'70dp'
+			cols:2
+			Button:
+				text:'∆'
+				size_hint:None,1
+				width:'95dp'
+				background_color:0,0,0,1
+				
+			Button:
+				markup:True
+				text_size:self.width,None
+				text:'®'
+				font_size:100
+				color:1,1,1,.7
+				halign:'right'
+				valign:'middle'
+				size_hint:.1,1
+				background_color:0,0,0,.7
+				
+		TextInput:
+			text:'0'
+			id:display
+			disabled:True
+			multiline:False
+			text_size:self.size
+			font_size:'40sp'
+			valign:'bottom'
+			halign:'right'
+			color:0,1,1,.3
+			size_hint:1,.15
+			
+		TextInput:
+			text:'|'
+			id:count
+			disabled:True
+			multiline:False
+			text_size:self.size
+			font_size:'30sp'
+			valign:'bottom'
+			halign:'right'
+			color:0,0,0,.8
+			background_color:0,1,1,.4
+			size_hint:1,.05
+
+		GridLayout:
+			size_hint:1,.6
+			cols:4
+			rows:5
+################-first-row####################
+			Button:
+				text:'%'
+				background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit()
+				
+			Button:
+				text:'^'
+				background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit()
+
+			Button:
+				text:'<<<'
+				background_color:1,0,0,.2
+				size_hint:.2,.2
+				on_press:root.remove()
+
+			Button:
+				text:'*'
+				background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit('*')
+				
+################-second-row####################
+			Button:
+				text:'7'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('7')
+				
+			Button:
+				text:'8'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('8')
+
+			Button:
+				text:'9'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('9')
+
+			Button:
+				text:'+'
+				background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit('+')
+				
+				
+################-third-row####################
+			Button:
+				text:'4'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('4')
+				
+			Button:
+				text:'5'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('5')
+
+			Button:
+				text:'6'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('6')
+
+			Button:
+				text:'-'
+				background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit('-')
+				
+################-fourth-row####################
+			Button:
+				text:'1'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('1')
+				
+			Button:
+				text:'2'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('2')
+
+			Button:
+				text:'3'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('3')
+
+			Button:
+				text:'/'
+				background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit('/')
+				
+################-fith-row####################
+			Button:
+				text:'0'
+				background_color:1,1,1,.6
+				size_hint:.2,.2
+				on_press:root.digit('0')
+				
+			Button:
+				text:'.'
+				#background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.digit('.')
+
+			Button:
+				text:'+/_'
+				#background_color:0,0,1,.2
+				size_hint:.2,.2
+				on_press:root.abs()
+
+			Button:
+				text:'='
+				size_hint:.2,.2
+				background_color:0,0,1,.2
+				background_normal:''
+				on_press:root.evaluate()
+				
